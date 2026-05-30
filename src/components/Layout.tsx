@@ -1,4 +1,4 @@
-import { Outlet, NavLink, useNavigate, Navigate } from 'react-router-dom'
+import { Outlet, NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
 import { useRole } from '../hooks/useRole'
 
@@ -74,8 +74,7 @@ export default function Layout() {
     navigate('/login')
   }
 
-  // Redirect produccion role away from forbidden pages
-  const firstAllowed = nav.find(n => perms[n.perm])?.to ?? '/orders'
+
 
   return (
     <div className="h-screen bg-[#F5F5F7] flex overflow-hidden">
